@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Access-Control-Allow-Origin" content="*">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cabañas - Estadía y hospedajes</title>
@@ -25,7 +23,11 @@
         <link href="lib/slick/slick-theme.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="../../css/style.css" rel="stylesheet">
+
+        <!-- Functions -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="message.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -53,26 +55,44 @@
 
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
-                            <a href="Pages/Client/client.html" class="nav-item nav-link">Clientes</a>
-                            <a href="Pages/message/message.html" class="nav-item nav-link">Mensajes</a>
-                            <a href="Pages/Cabanas/cabanas.html" class="nav-item nav-link">Cabañas</a>
+                            <a href="../../index.html" class="nav-item nav-link active">Home</a>
+                            <a href="../Client/client.html" class="nav-item nav-link">Clientes</a>
+                            <a href="../message/message.html" class="nav-item nav-link">Mensajes</a>
+                            <a href="../Cabanas/cabanas.html" class="nav-item nav-link">Cabañas</a>
                         </div>
                     </div>
                 </nav>
             </div>
         </div>
-        <div id="carousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="img/carousel-1.png" alt="Carousel Image">
-                    <div class="carousel-caption">
-                        <p class="animated fadeInRight">Deseas descansar</p>
-                        <h1 class="animated fadeInLeft">Cabañas es la mejor opción.</h1>
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div>
+                        <button onclick="traerInformacion()" > Consultar</button>
                     </div>
                 </div>
-            </div>
+                <br>
+                <div class="row">
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="number" id="id" placeholder="id">
+                            </td>
+                            <td>
+                                <input type="text" id="messagetext" placeholder="messagetext">
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <div>
+                        <button onclick="guardarInformacion()">Guardar!</button>
+                        <button onclick="editarInformacion()">Actualizar!</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="resultado"></div>
+                    <br>
+                </div>
         </div>
-    
 </body>
 </html>
